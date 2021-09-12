@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ReactMarkdown from 'react-markdown';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = ()=>{
+
+    const[text,setText]=useState("");
+
+    return(
+      <>
+        <div className="display">
+          <ReactMarkdown>{text}</ReactMarkdown>
+        </div>
+        <div className="text-write-div">
+          <textarea className="text-area" 
+            rows="15" 
+            placeholder="write your text here by following markdown rules." 
+            value={text} 
+            onChange={(e)=>{setText(e.target.value)}} 
+           />
+        </div>
+      </>
+    );
 }
-
 export default App;
