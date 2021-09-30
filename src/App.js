@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactMarkdown from 'react-markdown';
+import { LinkPreview } from '@dhaiwat10/react-link-preview';
 
 const App = ()=>{
 
     const[text,setText]=useState("");
-
     return(
       <>
         <div className="display">
